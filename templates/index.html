@@ -12,7 +12,7 @@
         <div class="carousel-inner">
           {% for blog in blogs %}
             {% if blog.featured == True %}
-              <div class="carousel-item" data-bs-interval="10000" onclick = 'location.href="{% url 'blogs' blog.id %}";'>
+              <div class="carousel-item" data-bs-interval="3000" onclick = 'location.href="{% url 'blogs' blog.id %}";'>
                 <img
                   src="/media/{{blog.image}}"
                   class="carousel-image d-block w-100"
@@ -29,7 +29,7 @@
           {% endfor %} 
           
           {% comment %} put welcome here  {% endcomment %}
-          <div class="carousel-item active" data-bs-interval="10000">
+          <div class="carousel-item active" data-bs-interval="3000">
             <img
               src="https://source.unsplash.com/1400x600/?laptops,dark"
               class="carousel-image d-block w-100"
