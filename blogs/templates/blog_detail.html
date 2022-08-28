@@ -1,30 +1,42 @@
-{% extends 'base.html' %}
-
-{% block content %}
+{% extends 'base.html' %} {% block content %}
 
 <!-- BLOG TITLE CONTAINER  -->
 <div class="title-container my-0">
-    <div class="px-4 py-1 my-2 text-center">
-        <h1 class="display-5 fw-bold">{{blog.title}}</h1>
-      </div>
+  <div class="px-4 py-1 my-2 text-center">
+    <h1 class="display-5 fw-bold">{{blog.title}}</h1>
+  </div>
 </div>
 
 <div class="content-container mb-5 pb-5">
   <!-- BLOG IMAGE -->
-    <img class="d-block  mx-auto mb-2" src="/media/{{blog.image}}" alt="" width="800" height="350">
-    <div class="text-container mx-auto my-4">
+  <img
+    class="blog-image d-block mx-auto mb-2"
+    src="/media/{{blog.image}}"
+    alt=""
+  />
+  <div class="text-container mx-auto my-4">
     <div class="mx-4">
-          <p style="font-size: 22px;" class="username pb-2 pt-4 mt-3">
-          <!-- USER ICON -->
-          <svg class="mx-2 ms-2 ps-3" xmlns="http://www.w3.org/2000/svg" width="40" height="32" viewBox="0 0 448 512"><path d="M272 304h-96C78.8 304 0 382.8 0 480c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32C448 382.8 369.2 304 272 304zM48.99 464C56.89 400.9 110.8 352 176 352h96c65.16 0 119.1 48.95 127 112H48.99zM224 256c70.69 0 128-57.31 128-128c0-70.69-57.31-128-128-128S96 57.31 96 128C96 198.7 153.3 256 224 256zM224 48c44.11 0 80 35.89 80 80c0 44.11-35.89 80-80 80S144 172.1 144 128C144 83.89 179.9 48 224 48z"/></svg>
-          <b>{{blog.author}}</b>
+      <p style="font-size: 22px" class="username pb-2 pt-4 mt-3">
+        <!-- USER ICON -->
+        <svg
+          class="mx-2 ms-2 ps-3"
+          xmlns="http://www.w3.org/2000/svg"
+          width="40"
+          height="32"
+          viewBox="0 0 448 512"
+        >
+          <path
+            d="M272 304h-96C78.8 304 0 382.8 0 480c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32C448 382.8 369.2 304 272 304zM48.99 464C56.89 400.9 110.8 352 176 352h96c65.16 0 119.1 48.95 127 112H48.99zM224 256c70.69 0 128-57.31 128-128c0-70.69-57.31-128-128-128S96 57.31 96 128C96 198.7 153.3 256 224 256zM224 48c44.11 0 80 35.89 80 80c0 44.11-35.89 80-80 80S144 172.1 144 128C144 83.89 179.9 48 224 48z"
+          />
+        </svg>
+        <b>{{blog.author}}</b>
       </p>
-        <div class="mx-4 mb-4 pb-4">
-          <!-- BLOG CONTENT -->
-          <p>{{blog.content}}</p>
-        </div>
+      <div class="mx-4 mb-4 pb-4">
+        <!-- BLOG CONTENT -->
+        <p style="font-size: 20px">{{blog.content}}</p>
       </div>
     </div>
+  </div>
 </div>
 
 {% endblock %}

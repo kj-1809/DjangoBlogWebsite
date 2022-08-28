@@ -18,6 +18,62 @@
     .card:hover{
       transform: translateY(-10px);
     }
+    .carousel-image{
+      height: 550px;
+    }
+
+    .blog-image{
+      width: 800px;
+      height: 350px;
+    }
+
+    .about-us-img{
+      width: 700px;
+      height: 500px;
+    }
+
+    @media (max-width: 767px) {
+      .carousel-image{
+        height: 200px;
+      }
+      .blog-image{
+        width: 300px;
+        height: 175px; ;
+      }
+      .about-us-img{
+        width: 300px;
+        height: 250px;
+      }
+      #about-us-header{
+        text-align: center;
+      }
+    }
+    
+    @media (max-width: 1199px) and (min-width: 768px) {
+        .carousel-image{
+          height: 350px;
+        }
+        .blog-image{
+          width: 600px;
+          height: auto;
+      }
+      .about-us-img{
+        width: 500px;
+        height: 410px;
+      }
+      #about-us-header{
+        text-align: center;
+      }
+    }
+    .carousel-item:before {
+      content: "";
+      background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.5));
+      display: block;
+      position: absolute;
+      top: 0;
+      width: 100vw;
+      height: 100vh;
+    }
   </style>
 
   <body>

@@ -7,38 +7,15 @@
       <div
         id="carouselExampleCaptions"
         class="carousel slide carousel-fade"
-        data-bs-ride="false"
+        data-bs-ride="carousel"
       >
-        <div class="carousel-indicators">
-          <button
-            type="button"
-            data-bs-target="#carouselExampleCaptions"
-            data-bs-slide-to="0"
-            class="active"
-            aria-current="true"
-            aria-label="Slide 1"
-          ></button>
-          <button
-            type="button"
-            data-bs-target="#carouselExampleCaptions"
-            data-bs-slide-to="1"
-            aria-label="Slide 2"
-          ></button>
-          <button
-            type="button"
-            data-bs-target="#carouselExampleCaptions"
-            data-bs-slide-to="2"
-            aria-label="Slide 3"
-          ></button>
-        </div>
-
         <div class="carousel-inner">
           {% for blog in blogs %}
             {% if blog.featured == True %}
-              <div class="carousel-item" onclick = 'location.href="{% url 'blogs' blog.id %}";'>
+              <div class="carousel-item" data-bs-interval="3000" onclick = 'location.href="{% url 'blogs' blog.id %}";'>
                 <img
                   src="/media/{{blog.image}}"
-                  class="d-block w-100"
+                  class="carousel-image d-block w-100"
                   alt="..."
                 />
                 <div class="carousel-caption d-none d-md-block">
@@ -52,10 +29,10 @@
           {% endfor %} 
           
           {% comment %} put welcome here  {% endcomment %}
-          <div class="carousel-item active ">
+          <div class="carousel-item active" data-bs-interval="3000">
             <img
               src="https://source.unsplash.com/1400x600/?laptops,dark"
-              class="d-block w-100"
+              class="carousel-image d-block w-100"
               alt="..."
             />
             <div class="carousel-caption d-none d-md-block">
