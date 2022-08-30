@@ -21,6 +21,9 @@ from blogs.views import blog_detail_view
 from django.conf import settings
 from django.conf.urls.static import static 
 
+admin.site.site_header = "Admin Panel"
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('' , home_view ,name = 'home'),
