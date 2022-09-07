@@ -15,11 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from homepage.views import home_view
+from homepage.views import home_view , register_view , login_view
 from about.views import about_view
 from blogs.views import blog_detail_view
 from django.conf import settings
 from django.conf.urls.static import static 
+
+
 
 admin.site.site_header = "Admin Panel"
 
@@ -28,6 +30,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('' , home_view ,name = 'home'),
     path('about/' ,about_view ,name = 'about'),
-    path('blogs/<int:id>' , blog_detail_view , name = "blogs")
-    
+    path('blogs/<int:id>' , blog_detail_view , name = 'blogs'),
+    path('register/' , register_view , name = 'register'),
+    path('login/' , login_view , name =  'login')
+
 ] + static(settings.MEDIA_URL , document_root = settings.MEDIA_ROOT)

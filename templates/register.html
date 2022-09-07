@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <title>Create An Account</title>
+  </head>
+  <body class="h-screen">
+    <div class="w-full flex flex-wrap">
+      <!-- section for Registration -->
+      <div class="w-full md:w-1/2 flex flex-col">
+        <!-- Logo -->
+        <div
+          class="flex justify-center md:justify-start pt-12 md:pl-8 md:-mb-12"
+        >
+          <a
+            href={% url 'home' %}
+            class="bg-black text-white text-xl font-bold p-4 md:text-sm lg:text-xl rounded-lg"
+            >Tech Crunch</a
+          >
+        </div>
+        <!-- Form -->
+        <div
+          class="flex flex-col justify-center md:justify-start my-auto pt-8 md:pt-0 px-8 md:px-24 lg:px-32"
+        >
+          <p class="text-center text-3xl">Sign Up</p>
+          <form class="flex flex-col pt-3 md:pt-8" method = "POST">
+            <div class="flex flex-col pt-4">
+              <label for="username">Username</label>
+              <input
+                type="text"
+                id="username"
+                name = "username"
+                placeholder="Enter Your username"
+                class="shadow appearance-none border rounded w-100 py-2 px-3 shadow text-gray-700 leading-tight mt-2 focus:outline-none focus:shadow-outline"
+                required
+              />
+            </div>
+            <div class="flex flex-col pt-4">
+              <label for="email">E-Mail</label>
+              <input
+                type="email"
+                id="email"
+                name = "email"
+                placeholder="Enter Your Email"
+                class="shadow appearance-none border rounded w-100 py-2 px-3 shadow text-gray-700 leading-tight mt-2 focus:outline-none focus:shadow-outline"
+                required
+              />
+            </div>
+            <div class="flex flex-col pt-4">
+              <label for="password">Password</label>
+              <input
+                type="password"
+                id="password"
+                name = "password"
+                placeholder="Enter Your Name"
+                class="shadow appearance-none border rounded w-100 py-2 px-3 shadow text-gray-700 leading-tight mt-2 focus:outline-none focus:shadow-outline"
+                required
+              />
+            </div>
+            <div class="flex flex-col pt-4">
+              <label for="confirm-password">Confirm Password</label>
+              <input
+                type="password"
+                id="confirm_password"
+                name="confirm_password"
+                placeholder="Enter Your Name"
+                class="shadow appearance-none border rounded w-100 py-2 px-3 shadow text-gray-700 leading-tight mt-2 focus:outline-none focus:shadow-outline"
+                required
+                />
+            </div>
+            {% csrf_token %} 
+            <input
+              type="submit"
+              class="mt-8 bg-black text-white hover:bg-gray-800 rounded p-2"
+            />
+          </form>
+        </div>
+      </div>
+      <div class="w-1/2 shadow-2xl">
+        <img
+          class="h-screen w-full object-cover hidden md:block"
+          src="https://images.pexels.com/photos/3589903/pexels-photo-3589903.jpeg?cs=srgb&dl=pexels-inga-seliverstova-3589903.jpg&fm=jpg"
+        />
+      </div>
+    </div>
+  </body>
+</html>
