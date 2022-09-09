@@ -1,7 +1,7 @@
 from django.shortcuts import render , redirect , HttpResponse
 from blogs.models import Blog
 from django.contrib.auth.models import User
-from django.contrib.auth import authenticate
+from django.contrib.auth import authenticate , logout , login
 from django.contrib import messages
 # Create your views here.
 
@@ -33,11 +33,12 @@ def register_view(request):
         confirm_password = request.POST['confirm_password']
         
         if(password != confirm_password):
-            return HttpResponse("Passwords Don't match !")
+            messages.error(request, "Passwords Don't match !")
+            return redirect('home')
 
         user = User.objects.create_user(username , email , password)
         user.save()
-        # messages.success(request, "successfully created user")
+        messages.success(request, "Successfully created user")
         return redirect('home')
         
 
@@ -53,10 +54,15 @@ def login_view(request):
 
         user = authenticate(username=username, password=password)
         if user is not None:
+            login(request , user)
             messages.success(request, "Logged in successfully")
-            print("login successful")
             return redirect('home')
         else:
-            return HttpResponse("Invalid Password")
+            messages.error(request, "Invalid Password or username! Please try again")
+            return redirect('home')
 
     return render(request , 'login.html' , context = {})
+
+def logout_view(request):
+    logout(request)
+    return redirect('home')

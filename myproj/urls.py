@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from homepage.views import home_view , register_view , login_view
+from homepage.views import home_view , register_view , login_view , logout_view
 from about.views import about_view
 from blogs.views import blog_detail_view
 from django.conf import settings
@@ -32,6 +32,7 @@ urlpatterns = [
     path('about/' ,about_view ,name = 'about'),
     path('blogs/<int:id>' , blog_detail_view , name = 'blogs'),
     path('register/' , register_view , name = 'register'),
-    path('login/' , login_view , name =  'login')
+    path('login/' , login_view , name =  'login'),
+    path('logout/' , logout_view , name = 'logout')
 
 ] + static(settings.MEDIA_URL , document_root = settings.MEDIA_ROOT)

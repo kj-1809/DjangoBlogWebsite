@@ -1,66 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Tech Crunch</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
-      crossorigin="anonymous"
-    />
-  </head>
-  <style>
-    .card{
-      transition: .5s;
-    }
-    .card:hover{
-      transform: translateY(-10px);
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1" />
+  <title>Tech Crunch</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+        crossorigin="anonymous">
+</head>
+<style>
+  .card {
+    transition: .5s;
+  }
+
+  .card:hover {
+    transform: translateY(-10px);
+  }
+
+  .blog-image {
+    object-fit: cover;
+    width: 800px;
+    height: 350px;
+  }
+
+  .about-us-img {
+    width: 700px;
+    height: 500px;
+  }
+
+  @media (max-width: 767px) {
+    .blog-image {
+      object-fit: cover;
+      width: 370px;
+      height: 175px;
+      ;
     }
 
-    .blog-image{
-      object-fit:cover;
-      width: 800px;
-      height: 350px;
+    .about-us-img {
+      object-fit: cover;
+      width: 300px;
+      height: 250px;
     }
 
-    .about-us-img{
-      width: 700px;
-      height: 500px;
+    #about-us-header {
+      text-align: center;
+    }
+  }
+
+  @media (max-width: 1199px) and (min-width: 768px) {
+    .blog-image {
+      width: 600px;
+      height: auto;
     }
 
-    @media (max-width: 767px) {
-      .blog-image{
-        object-fit: cover;
-        width: 370px;
-        height: 175px; ;
-      }
-      .about-us-img{
-        object-fit: cover;
-        width: 300px;
-        height: 250px;
-      }
-      #about-us-header{
-        text-align: center;
-      }
-    }
-    
-    @media (max-width: 1199px) and (min-width: 768px) {
-        .blog-image{
-          width: 600px;
-          height: auto;
-      }
-      .about-us-img{
-        width: 500px;
-        height: 410px;
-      }
-      #about-us-header{
-        text-align: center;
-      }
+    .about-us-img {
+      width: 500px;
+      height: 410px;
     }
 
-    .carousel-item:before {
+    #about-us-header {
+      text-align: center;
+    }
+  }
+
+  .carousel-item:before {
     content: "";
     background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.5));
     display: block;
@@ -69,46 +75,120 @@
     width: 100vw;
     height: 100vh;
   }
-    
-  </style>
+</style>
 
-  <body>
-    <header class="d-flex flex-wrap justify-content-center py-3 mb-0 bg-dark">
-        <a href={%url 'home' %} class="d-flex align-items-center mx-2 mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
-          <svg class="logo ms-2" width="40" height="32" style="fill:white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3L562.7 256l-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"/></svg>
-          <span class="logo-text fs-4 text-white mx-3">Tech Crunch</span>
-        </a>
-  
-        <ul class="nav nav-pills me-2">
-          <li class="nav-item"><a href="{% url 'home' %}" class="nav-link" aria-current="page">Home</a></li>
-          <li class="nav-item"><a href="{% url 'about' %}" class="nav-link">About</a></li>
-          <li class="nav-item"><a href="{% url 'login' %}" class="nav-link active">Login</a></li>
-        </ul>
-      </header>
+<body>
+  <header class="d-flex flex-wrap justify-content-center py-3 mb-0 bg-dark">
+    <a href={%url 'home'
+       %}
+       class="d-flex align-items-center mx-2 mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+      <svg class="logo ms-2"
+           width="40"
+           height="32"
+           style="fill:white"
+           xmlns="http://www.w3.org/2000/svg"
+           viewBox="0 0 640 512">
+        <path
+              d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3L562.7 256l-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z" />
+      </svg>
+      <span class="logo-text fs-4 text-white mx-3">Tech Crunch</span>
+    </a>
 
-      {% block content %}
+    <ul class="nav nav-pills me-2">
+      <li class="nav-item"><a href="{% url 'home' %}"
+           class="nav-link"
+           aria-current="page">Home</a></li>
+      <li class="nav-item"><a href="{% url 'about' %}"
+           class="nav-link">About</a></li>
 
-      {% endblock %}
+      {% if user.is_authenticated %}
+      
+        <li class="nav-item">
+          <div class="dropdown text-end mx-2">
+            <a href="#"
+              class="d-block me-1"
+              data-bs-toggle="dropdown"
+              aria-expanded="false">
+              <svg xmlns="http://www.w3.org/2000/svg"
+                  class="mt-2 ms-1"
+                  height="22"
+                  width="22"
+                  style="fill:rgb(0, 76, 255)"
+                  viewBox="0 0 448 512">
+                <path
+                      d="M272 304h-96C78.8 304 0 382.8 0 480c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32C448 382.8 369.2 304 272 304zM48.99 464C56.89 400.9 110.8 352 176 352h96c65.16 0 119.1 48.95 127 112H48.99zM224 256c70.69 0 128-57.31 128-128c0-70.69-57.31-128-128-128S96 57.31 96 128C96 198.7 153.3 256 224 256zM224 48c44.11 0 80 35.89 80 80c0 44.11-35.89 80-80 80S144 172.1 144 128C144 83.89 179.9 48 224 48z" />
+              </svg>
+            </a>
+            <ul class="dropdown-menu text-small shadow-lg">
+              <li>
+                <p class="dropdown-item mb-0">signed in as</p>
+                <p class="mb-0 mx-2 px-2"><b>{{request.user.username}}</b></p>
+              </li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item"
+                  href={% url 'logout' %}>Sign out</a></li>
+            </ul>
+          </div>
+        </li>
+      {% else %}  
+        <li class="nav-item"><a href="{% url 'login' %}"
+          class="nav-link active">Login</a></li>
+      {% endif %}
+
+    </ul>
+  </header>
+
+  {% for message in messages %}
+
+  <div class="alert alert-{{message.tags}} alert-dismissible fade show mb-0"
+       role="alert">
+    <strong> {{message}} </strong>
+    <button type="button"
+            class="btn-close"
+            data-bs-dismiss="alert"
+            aria-label="Close"></button>
+  </div>
+  {% endfor %}
+
+  {% block content %}
+
+  {% endblock %}
 
 
-  </body>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+          crossorigin="anonymous"></script>
+</body>
 
 
-  <footer class="d-flex flex-wrap justify-content-between align-items-center py-2 my-4 border-top my-4 mx-2">
-    <div class="col-md-4 d-flex align-items-center">
-      <a href="{% url 'home'%}" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none mx-4 lh-1">
-        <svg width="30" height="24" style="fill:grey" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3L562.7 256l-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z"/></svg>
-      </a>
-      <span class="mb-3 mb-md-0 text-muted">© 2022 Tech Crunch</span>
-    </div>
+<footer class="d-flex flex-wrap justify-content-between align-items-center py-2 my-4 border-top my-4 mx-2">
+  <div class="col-md-4 d-flex align-items-center">
+    <a href="{% url 'home'%}"
+       class="mb-3 me-2 mb-md-0 text-muted text-decoration-none mx-4 lh-1">
+      <svg width="30"
+           height="24"
+           style="fill:grey"
+           xmlns="http://www.w3.org/2000/svg"
+           viewBox="0 0 640 512">
+        <path
+              d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3L562.7 256l-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z" />
+      </svg>
+    </a>
+    <span class="mb-3 mb-md-0 text-muted">© 2022 Tech Crunch</span>
+  </div>
 
-    <a href="#" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+  <a href="#"
+     class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
 
     <ul class="nav col-md-4 justify-content-end">
-      <li class="nav-item d-flex mx-2"><a href="{% url 'home'%}" class="nav-link px-2 text-muted">Home</a></li>
-      <li class="nav-item d-flex mx-2"><a href="{% url 'about'%}" class="nav-link px-2 text-muted">About</a></li>
+      <li class="nav-item d-flex mx-2"><a href="{% url 'home'%}"
+           class="nav-link px-2 text-muted">Home</a></li>
+      <li class="nav-item d-flex mx-2"><a href="{% url 'about'%}"
+           class="nav-link px-2 text-muted">About</a></li>
     </ul>
-  </footer>
+</footer>
 
 
 </html>
