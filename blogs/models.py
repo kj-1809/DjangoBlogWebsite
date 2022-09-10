@@ -1,5 +1,6 @@
 from django.db import models
 from ckeditor.fields import RichTextField
+from django.contrib.auth.models import User
 
 # Create your models here.
 class Blog(models.Model):
@@ -12,7 +13,18 @@ class Blog(models.Model):
     featured = models.BooleanField(default = False)
 
     def __str__(self):
-        return self.title + " " + str(self.id)
-        
+        return self.title
+
+class Comment(models.Model):
+    sno = models.AutoField(primary_key=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    blog = models.ForeignKey(Blog, on_delete=models.CASCADE)
+    data = models.TextField()
+
+    def __str__(self):
+        return str(self.sno) + " :  " + str(self.user) + " : " + str(self.blog)
+
+
+
 
 
