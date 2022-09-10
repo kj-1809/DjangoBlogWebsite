@@ -9,21 +9,25 @@
 
 <div class="content-container mb-5 pb-5">
   <!-- BLOG IMAGE -->
-  <img class="blog-image d-block mx-auto mb-2"
-       src="/media/{{blog.image}}"
-       alt="" />
+  <img
+    class="blog-image d-block mx-auto mb-2"
+    src="/media/{{blog.image}}"
+    alt=""
+  />
   <div class="text-container mx-auto my-4">
     <div class="mx-4">
-      <p style="font-size: 22px"
-         class="username pb-2 pt-4 mt-3">
+      <p style="font-size: 22px" class="username pb-2 pt-4 mt-3">
         <!-- USER ICON -->
-        <svg class="mx-2 ms-2 ps-3"
-             xmlns="http://www.w3.org/2000/svg"
-             width="40"
-             height="32"
-             viewBox="0 0 448 512">
+        <svg
+          class="mx-2 ms-2 ps-3"
+          xmlns="http://www.w3.org/2000/svg"
+          width="40"
+          height="32"
+          viewBox="0 0 448 512"
+        >
           <path
-                d="M272 304h-96C78.8 304 0 382.8 0 480c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32C448 382.8 369.2 304 272 304zM48.99 464C56.89 400.9 110.8 352 176 352h96c65.16 0 119.1 48.95 127 112H48.99zM224 256c70.69 0 128-57.31 128-128c0-70.69-57.31-128-128-128S96 57.31 96 128C96 198.7 153.3 256 224 256zM224 48c44.11 0 80 35.89 80 80c0 44.11-35.89 80-80 80S144 172.1 144 128C144 83.89 179.9 48 224 48z" />
+            d="M272 304h-96C78.8 304 0 382.8 0 480c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32C448 382.8 369.2 304 272 304zM48.99 464C56.89 400.9 110.8 352 176 352h96c65.16 0 119.1 48.95 127 112H48.99zM224 256c70.69 0 128-57.31 128-128c0-70.69-57.31-128-128-128S96 57.31 96 128C96 198.7 153.3 256 224 256zM224 48c44.11 0 80 35.89 80 80c0 44.11-35.89 80-80 80S144 172.1 144 128C144 83.89 179.9 48 224 48z"
+          />
         </svg>
         <b>{{blog.author}}</b>
       </p>
@@ -35,23 +39,24 @@
   </div>
 </div>
 
-<h2 class="my-4 mx-3 px-3 pb-1 ">COMMENTS</h2>
+<h2 class="my-4 mx-3 px-3 pb-1">COMMENTS</h2>
 <div class="container-md py-4 border rounded shadow-lg">
   <div class="container-fluid col-md-6 offset-md-0 mt-2">
     <!-- USER INPUT -->
-    <form class="mt-2 px-3"
-          method = "POST">
+    <form class="mt-2 px-3" method="POST">
       <div class="row">
         <div class="col-md-12 text-start">
-          <svg height="32"
-               width="32"
-               xmlns="http://www.w3.org/2000/svg"
-               viewBox="0 0 640 512">
+          <svg
+            height="32"
+            width="32"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 640 512"
+          >
             <path
-                  d="M224 256c70.7 0 128-57.3 128-128S294.7 0 224 0S96 57.3 96 128s57.3 128 128 128zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H322.8c-3.1-8.8-3.7-18.4-1.4-27.8l15-60.1c2.8-11.3 8.6-21.5 16.8-29.7l40.3-40.3c-32.1-31-75.7-50.1-123.9-50.1H178.3zm435.5-68.3c-15.6-15.6-40.9-15.6-56.6 0l-29.4 29.4 71 71 29.4-29.4c15.6-15.6 15.6-40.9 0-56.6l-14.4-14.4zM375.9 417c-4.1 4.1-7 9.2-8.4 14.9l-15 60.1c-1.4 5.5 .2 11.2 4.2 15.2s9.7 5.6 15.2 4.2l60.1-15c5.6-1.4 10.8-4.3 14.9-8.4L576.1 358.7l-71-71L375.9 417z" />
+              d="M224 256c70.7 0 128-57.3 128-128S294.7 0 224 0S96 57.3 96 128s57.3 128 128 128zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H322.8c-3.1-8.8-3.7-18.4-1.4-27.8l15-60.1c2.8-11.3 8.6-21.5 16.8-29.7l40.3-40.3c-32.1-31-75.7-50.1-123.9-50.1H178.3zm435.5-68.3c-15.6-15.6-40.9-15.6-56.6 0l-29.4 29.4 71 71 29.4-29.4c15.6-15.6 15.6-40.9 0-56.6l-14.4-14.4zM375.9 417c-4.1 4.1-7 9.2-8.4 14.9l-15 60.1c-1.4 5.5 .2 11.2 4.2 15.2s9.7 5.6 15.2 4.2l60.1-15c5.6-1.4 10.8-4.3 14.9-8.4L576.1 358.7l-71-71L375.9 417z"
+            />
           </svg>
-          <header class="ms-1 d-inline"
-                  style="font-size: 20px">
+          <header class="ms-1 d-inline" style="font-size: 20px">
             Let us know your thoughts:
           </header>
         </div>
@@ -59,19 +64,23 @@
 
       <div class="row mt-2">
         <div class="col-md-12">
-          <textarea name="comment"
-                    class="form-control"
-                    id="comment"
-                    rows="2"
-                    placeholder="Write your comment here"></textarea>
+          <textarea
+            name="comment"
+            class="form-control"
+            id="comment"
+            rows="2"
+            placeholder="Write your comment here"
+          ></textarea>
         </div>
       </div>
       {% csrf_token %}
       <div class="row mt-2">
         <div class="col-md-4 text-start">
-          <button name="comment-button"
-                  type="submit"
-                  class="btn btn-outline-secondary">
+          <button
+            name="comment-button"
+            type="submit"
+            class="btn btn-outline-secondary mb-4"
+          >
             Comment
           </button>
         </div>
@@ -79,25 +88,25 @@
     </form>
     <!-- PREVIOUS COMMENTS -->
     <div class="row flex-column">
-
       {% for comment in comments %}
-        <div class="col-md-12 mt-4 pt-4 px-3 mx-3">
-          <div class="text-start col-12">
-            <svg height="25"
-                width="25"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 448 512">
-              <path
-                    d="M224 0c70.7 0 128 57.3 128 128s-57.3 128-128 128s-128-57.3-128-128S153.3 0 224 0zM209.1 359.2l-18.6-31c-6.4-10.7 1.3-24.2 13.7-24.2H224h19.7c12.4 0 20.1 13.6 13.7 24.2l-18.6 31 33.4 123.9 39.5-161.2c77.2 12 136.3 78.8 136.3 159.4c0 17-13.8 30.7-30.7 30.7H265.1 182.9 30.7C13.8 512 0 498.2 0 481.3c0-80.6 59.1-147.4 136.3-159.4l39.5 161.2 33.4-123.9z" />
-            </svg>
-            <h6 class="ms-2 d-inline text-danger"><b>{{comment.user}}</b></h6>
-          </div>
-          <div class="col-11 text-start text-break mt-2 ms-4">
-            <p>
-              {{comment.data}}
-            </p>
-          </div>
+      <div class="col-md-12 mt-2 pt-2 px-3 mx-3 border-top">
+        <div class="text-start col-12">
+          <svg
+            height="25"
+            width="25"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 448 512"
+          >
+            <path
+              d="M224 0c70.7 0 128 57.3 128 128s-57.3 128-128 128s-128-57.3-128-128S153.3 0 224 0zM209.1 359.2l-18.6-31c-6.4-10.7 1.3-24.2 13.7-24.2H224h19.7c12.4 0 20.1 13.6 13.7 24.2l-18.6 31 33.4 123.9 39.5-161.2c77.2 12 136.3 78.8 136.3 159.4c0 17-13.8 30.7-30.7 30.7H265.1 182.9 30.7C13.8 512 0 498.2 0 481.3c0-80.6 59.1-147.4 136.3-159.4l39.5 161.2 33.4-123.9z"
+            />
+          </svg>
+          <h6 class="ms-2 d-inline text-danger"><b>{{comment.user}}</b></h6>
         </div>
+        <div class="col-11 text-start text-break mt-2 ms-4 ps-1">
+          <p>{{comment.data}}</p>
+        </div>
+      </div>
       {% endfor %}
     </div>
     <!-- Previous Comment div ends  -->
