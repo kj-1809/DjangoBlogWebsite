@@ -33,6 +33,6 @@ urlpatterns = [
     path('blogs/<int:id>' , blog_detail_view , name = 'blogs'),
     path('register/' , register_view , name = 'register'),
     path('login/' , login_view , name =  'login'),
-    path('logout/' , logout_view , name = 'logout')
+    path('logout/' , logout_view , name = 'logout'),
 
 ] + static(settings.MEDIA_URL , document_root = settings.MEDIA_ROOT)

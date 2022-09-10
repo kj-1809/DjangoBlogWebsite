@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, HttpResponse
 from blogs.models import Blog , Comment
 from django.shortcuts import redirect
 # Create your views here.
@@ -23,3 +23,4 @@ def blog_detail_view(request , id):
             return redirect('login')
 
     return render(request , "blog_detail.html" , context = context)
+
