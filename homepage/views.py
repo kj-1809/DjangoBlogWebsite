@@ -36,9 +36,14 @@ def register_view(request):
             messages.error(request, "Passwords Don't match !")
             return redirect('home')
 
-        user = User.objects.create_user(username , email , password)
-        user.save()
-        messages.success(request, "Successfully created user")
+        current_users = User.objects.filter(username = username)
+        if len(current_users) == 0:
+            user = User.objects.create_user(username , email , password)
+            user.save()
+            messages.success(request, "Successfully created user")
+        else:
+            messages.error(request, "User with the same username already exists. Please try again !")
+
         return redirect('home')
         
 
